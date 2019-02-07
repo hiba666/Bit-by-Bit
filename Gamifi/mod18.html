@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Python Syntax Quiz</title>
+</head>
+<body>
+    <style>
+        #frame001 {
+            border-radius: 5px;
+            border: 2px solid black;
+            height: 450px;
+            width: 600px;
+			margin-left:100px;
+        }
+
+        .buttons001 {
+            background-color: dodgerblue;
+            color: white;
+            width: 70px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .buttons002 {
+            background-color: blue;
+            color: white;
+            width: 70px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        #font001 {
+            text-align: center;
+            font-size: large;
+            color: black;
+        }
+    </style>
+	
+    <div id="frame001">
+        <div id="font001">
+            <h2>Python Syntax</h2><text>Question: <text id="number001">0</text></text><br />
+            <text>Score: <text id="score001">0</text></text><br />
+            <text>Time: <text id="time001">60</text></text><br />
+            <hr />
+            <div id="disappear001">
+                <button class="buttons002" onclick="begin001()">Begin</button>
+            </div>
+            <p id="message001"></p>
+            <p id="message002"></p>
+            <p id="message003"></p>
+            <p id="message004"></p>
+        </div>
+    </div><button  style="background:black;color:white; font-family:comic sans MS; font-size:100%;position:absolute;left:100px;width:200px;" >
+<a href="mod12.html" style=" text-decoration: none;color:white; background:black;font-family:comic sans MS; font-size:100%;width:200px;">PREV </a></button>
+<button  style="background:black;color:white; font-family:comic sans MS; font-size:100%;position:absolute;left:600px;width:200px;" >
+<a href="mod144.html" style=" text-decoration: none;color:white; background:black;font-family:comic sans MS; font-size:100%;width:200px;">NEXT </a></button></html>
+    <script>
+        var question001 = ["What does this code output?<br>letters = ['x', 'y', 'z']<br>letters.insert(1, 'w')<br>print(letters[2])",
+            "Which number is not printed by this code?<br>try:print(1)<br>print(20 / 0)<br>print(2)<br>except<br>ZeroDivisionError:print(3)<br>finally:<br>print(4)",
+            "What method is called just before an object is instantiated<br><br>__create__<br>__del__<br>__init__",];
+
+        var options001 = ["<button class=buttons001 onclick=q1i()>w</button><br /><br /><button class=buttons001 onclick=q1c()>y</button>"];
+        var options002 = ["<button class=buttons001 onclick=q2c()>2</button><br /><br /><button class=buttons001 onclick=q2i()>3</button>"];
+        var options003 = ["<button class=buttons001 onclick=q3c()>3</button><br /><br /><button class=buttons001 onclick=q3i()>2</button>"];
+		
+		
+		var question001 = [" Can you slice a tuple?",
+            "How can one display statements in python?",
+            "What method is called just before an object is instantiated<br><br>__create__<br>__del__<br>__init__"];
+
+        var options001 = ["<button class=buttons001 onclick=q1i()>No</button><br /><br /><button class=buttons001 onclick=q1c()>Yes</button>"];
+        var options002 = ["<button class=buttons001 onclick=q2c()><p>printf()</p></button><br /><br /><button class=buttons001 onclick=q2i()><p>print()</p></button>"];
+        var options003 = ["<button class=buttons001 onclick=q3c()>3</button><br /><br /><button class=buttons001 onclick=q3i()>2</button>"];
+        
+
+        var a = 0;
+        a++;
+        var b = 0;
+        b++;
+
+        function begin001() {
+            c = 60;
+            disappear001.innerHTML = "";
+            message001.innerHTML = question001[0];
+            message002.innerHTML = options001;
+            number001.innerHTML = a++;
+        }
+
+        function q1c() {
+            message003.innerHTML = "Correct.";
+            message002.innerHTML = "";
+            score001.innerHTML = b++;
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q1i() {
+            message003.innerHTML = "Incorrect.";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q2c() {
+            message003.innerHTML = "Correct. A=0";
+            message002.innerHTML = "";
+            score001.innerHTML = b++;
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q2i() {
+            message003.innerHTML = "Incorrect. A=0";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q3c() {
+            message003.innerHTML = "Correct";
+            message002.innerHTML = "";
+            score001.innerHTML = b++;
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q3i() {
+            message003.innerHTML = "Incorrect.";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        
+
+        function next001() {
+            if (a == "2") {
+                message001.innerHTML = question001[1];
+                message002.innerHTML = options002;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "3") {
+                message001.innerHTML = question001[2];
+                message002.innerHTML = options003;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+           else {
+                window.clearInterval(update);
+                c = "-";
+                message001.innerHTML = "End of Quiz";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+            }
+        }
+
+        function timer001() {
+            c = c - 1;
+            if (c < 60) {
+                time001.innerHTML = c;
+            }
+
+            if (c < 1) {
+                window.clearInterval(update);
+                message001.innerHTML = "Time's up";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+            }
+        }
+
+        update = setInterval("timer001()", 1000);
+
+        function repeat001() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>

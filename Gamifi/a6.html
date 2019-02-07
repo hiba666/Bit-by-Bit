@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h2{
+display:inline;
+font-family:Impact;
+font-size:32px;
+color:#63AA9C;
+}
+i{
+font-style:normal;
+font-size:150%;
+font-weight:bold;
+
+}
+fieldset{
+height:300px;
+width:300px;
+position:absolute;
+right:450px;
+background-color:#222930;
+}
+p{
+font-family:'Comic Sans MS';
+font-size:115%;
+color:#DC3D24;
+}
+input.but{
+background-color:#E3AE57;
+height:40px;
+width:70px;
+}
+#sa{
+position:relative;
+left:150px;
+</style>
+</head>
+<body>
+<fieldset><pre>
+<h2>GUESS </h2> </pre><i id="le"> </i> <h2 id="sh"></h2>
+<p id="question"> </p><br />
+<input type="text" id="Mksucks" />
+<br /><br /><br />
+<input type="submit" value="Submit" class="but" onclick="Sync()"  />
+<input type="submit" value="Hint" id="sa" class="but" onclick="Sync1()"  /></fieldset>
+<script>
+var Ques=[
+		{level:1, hint1:"I am a small anonymous function", hint2:"I can take any number of arguments", hint3:"But I can have only one expression", ans:"lambda"},	
+		{level:1, hint1:"I am a collection", hint2:"I am ordered and unchangeable", hint3:"I am written with round brackets", ans:"tuples"},
+		{level:1, hint1:"I am a collection", hint2:"I am unordered, changeable and indexed", hint3:"I am written with curly brackets", ans:"Dictionary"},
+		{level:1, hint1:"I am a syntax ", hint2:"I am used for  storing and exchanging data", hint3:"I am written with JavaScript object notation.", ans:"JSON"}
+		
+];
+
+var count=0;
+var score=0;
+var hint=0;
+var Ob=document.getElementById("question");
+Ob.innerHTML=Ques[count].hint1;
+var Pa=document.getElementById("sh");
+Pa.innerHTML="Score="+score;
+function Bird(){
+Pa.innerHTML="Score="+score;
+var Ob=document.getElementById("question");
+Ob.innerHTML=Ques[count].hint1;}
+function Sync(){
+var Oba=document.getElementById("Mksucks").value;
+if(Oba==Ques[count].ans)
+{count++;
+window.alert("Correct answer");
+score++;
+hint=0;
+Bird();
+}
+else
+{
+count++;
+window.alert("Wrong answer oops. The right answer is "+Ques[count-1].ans);
+hint=0;
+Bird();
+}}
+	
+function Sync1(){
+	if((hint===2)||(hint==='2'))
+	window.alert("Out of Hints");
+	else if((hint===0)||(hint==='0'))
+	{
+		hint++;
+		Ob.innerHTML=Ques[count].hint2;
+	}
+	else
+	{
+				hint++;
+		Ob.innerHTML=Ques[count].hint3;
+	}
+}	
+</script>
+</body>
+</html>
+                     

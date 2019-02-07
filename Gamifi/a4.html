@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+h1{
+text-align:center;
+font-family:"Comic Sans MS";
+display:inline;
+}
+#crue{
+display:inline;
+text-align:right;
+position:relative;
+left:110px;
+}
+#point{
+font-style:normal;
+}
+table{
+border:2px solid black;
+margin:10px auto 10px auto;
+height:300px;
+width:350px;
+padding:10px;
+background-color:#92aac7;
+color:#662e1c;
+
+}
+#th2{
+border-left:2px solid black;
+}
+#crue{
+font-family:"Comic Sans MS";
+color:#4897d8;
+}
+</style>
+</head>
+<body>
+<pre>
+<h1> Choose the correct option</h1></pre>
+<p id="crue">Points=<i id="point"> </i></p>
+<table>
+<tr>
+<th id="th1" onclick="func()"> </th>
+<th id="th2" onclick="func1()"> </th>
+</tr>
+</table>
+<script>
+var n=0;
+var Ob1={
+question:"defn Fun():<br/> print(2)",
+val:false
+};
+var Ob2={
+question:"def Fun():<br/> print(2)",
+val:true
+};
+var O1=document.getElementById("th1");
+O1.innerHTML=Ob1.question;
+var O2=document.getElementById("th2");
+O2.innerHTML=Ob2.question;
+function func()
+{
+	window.alert("You Lose");
+	Ob1.question="for x in range[1:6]";
+	O1.innerHTML=Ob1.question;
+	Ob2.question="for x in range(1:6)";
+	O2.innerHTML=Ob2.question;
+	
+}
+function func1()
+{
+	window.alert("Bravo! Points=1");
+	var Ob1=document.getElementById("point");
+	var n1=Ob1.innerHTML;
+	if (n1=="")
+	Ob1.innerHTML=n+10;
+	else
+	Ob1.innerHTML=Number(n1)+10;
+	Ob1.question="for x in range[1:6]";
+	O1.innerHTML=Ob1.question;
+	Ob2.question="for x in range(1:6)";
+	O2.innerHTML=Ob2.question;
+}
+</script>
+</body>
+</html>

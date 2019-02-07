@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<style>
+h2{
+display:inline;
+color:#283655;
+}
+i{
+font-style:normal;
+font-size:150%;
+font-weight:bold;
+color:#283655;
+}
+fieldset{
+height:300px;
+width:400px;
+position:absolute;
+left:200px;
+background-color:#cb0000;
+color:#e4ea8c;
+}
+#Mksucks{
+-webkit-border-radius:2em 1em 2em 1em;
+border-radius:2em 1em 2em 1em;
+}
+#cr{
+background-color:#e4ea8c;
+height:40px;
+width:70px;
+}
+</style>
+</head>
+<body>
+<fieldset>
+<h2>QUIZ LEVEL</h2> <i id="le">1</i> <h2 id="sh">Score=0</h2>
+<p id="question">&gt;&gt;&gt; x = 5<br> &gt;&gt;&gt; y = x + 3 <br>&gt;&gt;&gt; y = int(str(y) + '2')  <br>&gt;&gt;&gt; print(y)</p><br>
+<input id="Mksucks" type="text">
+<br><br><br>
+<input id="cr" value="Submit" onclick="Sync()" type="submit"></fieldset>
+<script>
+var Ques=[
+		{level:1, que:">>> x = 5<br /> >>> y = x + 3 <br/>>>> y = int(str(y) + '2')  <br />>>> print(y)", ans:"82"},
+		{level:1, que:"How many lines will this code print? <br/>while False:<br/> print('Looping...')", ans:"0"},
+		{level:1, que:">>> x = 3 <br/>>>> num = 17 <br/>>>> print(num % x)", ans:"2"},
+		{level:1, que:"What does this code output?<br/> letters = ['x', 'y', 'z']<br/> letters.insert(1, 'w') <br/>print(letters[2])", ans:"y"},
+		{level:1, que:"What is returned by functions that don't have a return statement? <br/>none,0,false", ans:"none"},
+		{level:2, que:"What method is called just before an object is instantiated?<br/>__create__<br/>__del__<br/>__init__", ans:"__init__"},
+		{level:2, que:"Which number is not printed by this code?<br/> try:<br/> print(1)<br/>print(20 / 0)<br/> print(2)<br/> except ZeroDivisionError:<br/> print(3)<br/> finally: <br/>print(4)", ans:"2"},
+		{level:2, que:"What is the result of this code?<br/>def power(x, y):<br/>if y == 0:<br/>return 1<br/>else:<br/>return x * power(x, y-1)<br/>print(power(2, 3))", ans:"8"},
+		{level:3, que:"What is the result of this code?<br/>def power(x, y):<br/>if y == 0:<br/>return 1<br/>else:<br/>return x * power(x, y-1)<br/>print(power(2, 3))", ans:"8"},
+		{level:3, que:"try:<br/>print(1)<br/>assert 2 + 2 == 5<br/>except AssertionError:<br/>print(3)<br/>except:<br/>print(4)", ans:"4"}
+		
+		
+];
+
+var count=0;
+var count1=0;
+var score=0;
+var leve=1;
+var Ob=document.getElementById("question");
+Ob.innerHTML=Ques[count].que;
+var Ov=document.getElementById("le");
+Ov.innerHTML=leve;
+var Pa=document.getElementById("sh");
+Pa.innerHTML="Score="+score;
+function Bird(){
+if((count1===2)||(count1==='2'))
+{
+	if((leve!==3)||(leve!=='3'))
+	{
+		if(count<=4)
+		{
+		window.alert("Congrats Your level increased");
+		count=5;
+		score+=5;
+		leve++;
+		}	
+		else if(count<=7&&count>=4)
+		{
+			window.alert("Congrats Your level increased");
+		count=8;
+		leve++;
+		
+		}}
+		
+}
+Ov.innerHTML=leve;
+Pa.innerHTML="Score="+score;
+var Ob=document.getElementById("question");
+Ob.innerHTML=Ques[count].que;}
+function Sync(){
+var Oba=document.getElementById("Mksucks").value;
+if(Oba==Ques[count].ans)
+{count++;
+count1++;
+window.alert("Correct answer");
+score++;
+Bird();
+}
+else
+{count1=0;
+count++;
+window.alert("Wrong answer oops. The right answer is "+Ques[count-1].ans);
+Bird();
+}}
+	
+	
+</script>
+
+
+                     
+</body></html>

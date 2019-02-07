@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<meta name="google-signin-client_id" content="914487027823-fbaf2if63p3nbci337e911279qhts148.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport"content="width=device-width, minimum-scale=1.0, initial-scale=1">
+<style>*{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+body{background:#FCDDEF}
+header{background:rgba(180, 40, 80, 0.9);
+height:80px;}
+#lng{color:white; font-family:comic sans MS; font-size:300%;}
+#l{color:rgba(180, 40, 80, 0.9);  font-family:comic sans MS;font-size:200%;}
+aside{width:300px;
+}
+.accordion {
+    background-color:black ;
+    color:white;
+  cursor: pointer;
+    text-align: left;
+	width:100%;
+    outline: none;
+    font-size: 10px;
+    transition: 0.4s;
+}
+.accordion1 {width:100%;
+    background-color:#002471;
+    color:white;
+ 
+}
+
+.active, .accordion:hover {
+    background-color:black;
+	color:white;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+.panel{
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.vertical-menu a {
+
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.vl { border-left: 3px solid #900C3F;
+  height: 100%;
+  position: absolute;
+  left: 350px;
+
+  top: 100px;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TSEC HACKS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html.html">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Achievements <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="a.html">Progress Tracker</a></li>
+          <li><a href="b.html">Badges</a></li>
+        
+        </ul>
+      </li>
+      <li><a href="leader.php">LeaderBoard</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+       <
+      
+       
+	  <li><button class="btn btn-success" data-target="#mymodel" data-toggle="modal"  onclick="document.getElementById('modal-wrapper2').style.display='block'"><span class="glyphicon glyphicon-user" ></span> Sign Out</button></li>
+</ul>
+  </div>
+</nav>
+<aside><label id="l">Python Modules</label><br><br>
+<button class="accordion" style=" font-family:Garamond; font-size:30px;">Basics of Python </button>
+<div class="panel"><div class="vertical-menu">
+  <button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod11()">Python Syntax</button>
+<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod12()">Python Variables</button>
+
+</div></div><br>
+<button class="accordion" style=" font-family:Garamond; font-size:30px;">Decison Making and Function </button>
+<div class="panel"><div class="vertical-menu">
+<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod13()">Condition Loops</button><BR>
+	<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod14()">Functions</button>
+
+
+</div></div><br>
+<button class="accordion" style=" font-family:Garamond; font-size:30px;">OOP Using Python Programming </button>
+<div class="panel"><div class="vertical-menu">
+<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod11()">Classes and Constructers</button><br>
+	<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod13()">Inheritance</button>
+</div></div><br>
+<button class="accordion" style=" font-family:Garamond; font-size:30px;">Files Handling </button>
+<div class="panel"><div class="vertical-menu">
+  <button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod11()">Types of File</button><br>
+	<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod11()">Exceptional Handling</button>
+</div></div><br>
+<button class="accordion" style=" font-family:Garamond; font-size:30px;">GUI Programming and Databases </button>
+<div class="panel"><div class="vertical-menu">
+  <button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod11()">GUI and DB</button><br>
+	<button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod11()">Tkinter</button>
+</div></div><br>
+<button class="accordion" style=" font-family:Garamond; font-size:30px;">Final Quiz </button>
+<div class="panel"><div class="vertical-menu">
+ <button style=" font-family:comic sans MS; font-size:20px;   background-color: Transparent; background-repeat:no-repeat;border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;" onclick="mod15()">Give Test</button>
+</div></div>
+</aside>
+<div class="vl"></div>
+<iframe id="if1"scrolling="no"; style="height: 100%;position: absolute;left: 450px; height:600px;top: 150px; width:800px;" src="second.html"></iframe>
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+function mod11() {
+document.getElementById("if1").src= "mod11.html";
+}
+function mod12() {
+document.getElementById("if1").src= "mod221.html";
+}
+function mod13() {
+document.getElementById("if1").src= "a6.html";
+}
+function mod14() {
+document.getElementById("if1").src= "a4.html";
+}
+function mod15() {
+document.getElementById("if1").src= "a5.html";
+}
+</script>
+</body>
+</html>
